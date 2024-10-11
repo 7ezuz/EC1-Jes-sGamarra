@@ -1,20 +1,35 @@
 package com.example.appec1
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class DigitoNumActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_digito_num)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+
+        val editTextNumero = findViewById<EditText>(R.id.btnNumero)  //
+        val buttonCalcular = findViewById<Button>(R.id.btnCalcular)
+        val textViewResultado = findViewById<TextView>(R.id.btnResultado)
+
+
+        buttonCalcular.setOnClickListener {
+            val numero = editTextNumero.text.toString()
+
+            if (numero.isNotEmpty()) {
+
+                val cantidadDigitos = numero.length
+
+                textViewResultado.text = "Cantidad de dígitos: $cantidadDigitos"
+            } else {
+
+                textViewResultado.text = "Por favor, ingrese un número."
+            }
         }
     }
 }

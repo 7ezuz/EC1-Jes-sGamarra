@@ -3,4 +3,8 @@
     <string name="TasaAlco">Ingrese la tasa de Alcohol</string>
     <string name="btnCalcular">Calcular</string>
     <string name="btnteexto" />
+    <string name="Suma" />
+    <string name="Suuma">Resultado.</string>
+    <string name="btnCaaalcular">Calcular\n</string>
+    <string name="btnNum">Ingresar un numero entre 23 al 99</string>
 </resources>
